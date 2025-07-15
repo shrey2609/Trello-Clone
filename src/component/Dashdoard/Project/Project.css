@@ -1,0 +1,61 @@
+.project {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+}
+.project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.project-form input,
+.project-form textarea {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.project-form button {
+  padding: 10px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.project-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.project-card {
+  background-color: #f1f5f9;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+.project-card h4 {
+  margin: 0 0 4px 0;
+}
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.project-buttons button {
+  background-color: #10b981;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.project-buttons .delete {
+  background-color: #ef4444;
+}
+.project-buttons .delete:hover {
+  background-color: #dc2626;
+}
+.project-buttons button:hover {
+  opacity: 0.9;
+}
