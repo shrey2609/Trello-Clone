@@ -12,20 +12,17 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ Validation: check for empty fields
     if (!name || !email || !password) {
       setError("All fields are required.");
       return;
     }
 
-    // ✅ Check if user already exists
     const existingUser = JSON.parse(localStorage.getItem("registeredUser"));
     if (existingUser && existingUser.email === email) {
       setError("An account with this email already exists.");
       return;
     }
 
-    // ✅ Save new user to localStorage
     const newUser = { name, email, password };
     localStorage.setItem("registeredUser", JSON.stringify(newUser));
 
@@ -37,24 +34,9 @@ function Register() {
     <div className="auth-container">
       <h2>Register</h2>
       <form className="auth-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} />
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
         {error && <p className="error">{error}</p>}
 

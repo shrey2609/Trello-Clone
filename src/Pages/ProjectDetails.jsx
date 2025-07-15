@@ -71,40 +71,19 @@ function ProjectDetails() {
 
         <hr />
 
+
+
         <h3>Add Task</h3>
         <form className="task-form" onSubmit={handleAddTask}>
-          <input
-            type="text"
-            placeholder="Task Name"
-            value={taskName}
-            onChange={(e) => setTaskName(e.target.value)}
-          />
+          <input type="text" placeholder="Task Name" value={taskName} onChange={(e) => setTaskName(e.target.value)}/>
 
-          <textarea
-            placeholder="Task Description"
-            value={taskDesc}
-            onChange={(e) => setTaskDesc(e.target.value)}
-          ></textarea>
+          <textarea  placeholder="Task Description"  value={taskDesc}  onChange={(e) => setTaskDesc(e.target.value)} ></textarea>
 
-          <input
-            type="text"
-            placeholder="Tags (comma-separated)"
-            value={taskTags}
-            onChange={(e) => setTaskTags(e.target.value)}
-          />
+          <input type="text" placeholder="Tags (comma-separated)" value={taskTags} onChange={(e) => setTaskTags(e.target.value)} />
 
-          <input
-            type="date"
-            value={taskDueDate}
-            onChange={(e) => setTaskDueDate(e.target.value)}
-          />
+          <input type="date" value={taskDueDate} onChange={(e) => setTaskDueDate(e.target.value)} />
 
-          <input
-            type="text"
-            placeholder="Assigned User"
-            value={taskAssignee}
-            onChange={(e) => setTaskAssignee(e.target.value)}
-          />
+          <input type="text" placeholder="Assigned User" value={taskAssignee} onChange={(e) => setTaskAssignee(e.target.value)}/>
 
           <select value={taskStatus} onChange={(e) => setTaskStatus(e.target.value)}>
             <option>Backlog</option>

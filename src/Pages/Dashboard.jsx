@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom"; // ✅ newly added
+import { useLocation } from "react-router-dom";
 import Navbar from "../component/Navbar/Navbar";
 import Project from "../component/Dashboard/Project/Project";
 import TaskBoard from "../component/Dashboard/Taskboard/Taskboard";
 
 function Dashboard() {
-  const location = useLocation(); // ✅ reads the ?tab param
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState("projects");
 
   useEffect(() => {

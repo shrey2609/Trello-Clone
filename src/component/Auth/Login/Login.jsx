@@ -11,26 +11,17 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ Validation: check for empty fields
     if (!email || !password) {
       setError("All fields are required.");
       return;
     }
-
-    // ✅ Get saved user from localStorage
     const savedUser = JSON.parse(localStorage.getItem("registeredUser"));
-
     if (!savedUser) {
       setError("No account found. Please register first.");
       return;
     }
-
-    // ✅ Match email and password
     if (savedUser.email === email && savedUser.password === password) {
-      // ✅ Save login session
       localStorage.setItem("user", JSON.stringify({ email }));
-      
-      // ✅ FIXED: Redirect to dashboard instead of /projects
       navigate("/dashboard");
     } else {
       setError("Invalid email or password.");
