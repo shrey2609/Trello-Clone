@@ -6,18 +6,17 @@ import Dashboard from "./Pages/Dashboard";
 import NotFound from "./Pages/NotFound";
 import ProjectDetails from "./Pages/ProjectDetails";
 import TaskBoard from "./component/Dashboard/Taskboard/Taskboard";
+import ProtectedRoute from "./component/Auth/ProtectedRoute";
 
 function App() {
-  const isLoggedIn = localStorage.getItem("user");
-
   return (
     <Routes>
-      <Route path="/" element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} />} />
+      <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />} />
-      <Route path="/projects/:id" element={isLoggedIn ? <ProjectDetails /> : <Navigate to="/login" />} />
-      <Route path="/taskboard" element={isLoggedIn ? <TaskBoard /> : <Navigate to="/login" />} />
+      <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
+      <Route path="/projects/:id" element={<ProtectedRoute element={<ProjectDetails />} />} />
+      <Route path="/taskboard" element={<ProtectedRoute element={<TaskBoard />} />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

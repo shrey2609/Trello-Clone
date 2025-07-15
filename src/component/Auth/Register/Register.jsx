@@ -22,12 +22,12 @@ function Register() {
       setError("An account with this email already exists.");
       return;
     }
-
+    // yaha value set ho rhai localStorage  me 
     const newUser = { name, email, password };
     localStorage.setItem("registeredUser", JSON.stringify(newUser));
 
     alert("Account created successfully!");
-    navigate("/login");
+    navigate("/login");// login page pe redirect.
   };
 
   return (
