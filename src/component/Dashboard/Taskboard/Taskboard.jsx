@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Taskboard.css";
-import Navbar from "../../Navbar/Navbar"; 
+
 
 function TaskBoard() {
   const [allTasks, setAllTasks] = useState([]);
@@ -40,7 +40,7 @@ function TaskBoard() {
 
   return (
     <>
-      <Navbar />
+    
       <div className="task-board">
         <h2>Task Board</h2>
         <div className="task-columns">

@@ -5,7 +5,7 @@ import Register from "./component/Auth/Register/Register";
 import Dashboard from "./Pages/Dashboard";
 import NotFound from "./Pages/NotFound";
 import ProjectDetails from "./Pages/ProjectDetails";
-import TaskBoard from "./component/Dashdoard/Taskboard/Taskboard";
+import TaskBoard from "./component/Dashboard/Taskboard/Taskboard";
 
 function App() {
   const isLoggedIn = localStorage.getItem("user");
@@ -15,9 +15,9 @@ function App() {
       <Route path="/" element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />}/>
-      <Route path="/projects/:id" element={<ProjectDetails />} />
-      <Route path="/taskboard" element={<TaskBoard />} />
+      <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />} />
+      <Route path="/projects/:id" element={isLoggedIn ? <ProjectDetails /> : <Navigate to="/login" />} />
+      <Route path="/taskboard" element={isLoggedIn ? <TaskBoard /> : <Navigate to="/login" />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
