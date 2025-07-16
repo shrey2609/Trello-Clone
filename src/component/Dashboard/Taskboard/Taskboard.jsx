@@ -10,8 +10,7 @@ function TaskBoard() {
     const collectedTasks = [];
     storedProjects.forEach((project) => {
       (project.tasks || []).forEach((task) => {
-        collectedTasks.push({
-          ...task,
+        collectedTasks.push({...task,
           projectName: project.name,
           status: task.status || "Backlog",
         });
@@ -39,8 +38,9 @@ function TaskBoard() {
   };
 
   return (
-    <>
     
+    <>
+    <div className="backgd">
       <div className="task-board">
         <h2>Task Board</h2>
         <div className="task-columns">
@@ -49,6 +49,7 @@ function TaskBoard() {
           {renderColumn("In Progress")}
           {renderColumn("Done")}
         </div>
+      </div>
       </div>
     </>
   );

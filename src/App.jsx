@@ -15,7 +15,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
-      <Route path="/projects/:id" element={<ProtectedRoute element={<ProjectDetails />} />} />
+      <Route path="/projects/:id" element={<ProtectedRoute element={<ProjectDetails />} />}/>
       <Route path="/taskboard" element={<ProtectedRoute element={<TaskBoard />} />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
