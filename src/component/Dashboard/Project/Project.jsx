@@ -46,19 +46,10 @@ function Project() {
     <div className="project">
       <h2>Create New Project</h2>
       <form onSubmit={handleSubmit} className="project-form">
-        <input
-          type="text"
-          placeholder="Project Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <textarea
-          placeholder="Project Description"
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
-        ></textarea>
-        {error && <p className="error">{error}</p>}
-        <button type="submit">Create</button>
+         <input type="text" placeholder="Project Name" value={name} onChange={(e) => setName(e.target.value)} />
+         <textarea placeholder="Project Description" value={desc} onChange={(e) => setDesc(e.target.value)}></textarea>
+         {error && <p className="error">{error}</p>}
+         <button type="submit">Create</button>
       </form>
       
       <h3>Listed Projects</h3>
